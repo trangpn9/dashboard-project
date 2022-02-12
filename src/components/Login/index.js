@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Formik } from "formik";
 import * as yup from "yup";
-import "./Login.css";
+import "./Login.scss";
 import logo from "./../../assets/images/logo.png";
 
 import { Col, Row, Container, Button, Form, InputGroup } from "react-bootstrap";
@@ -40,9 +40,13 @@ const Login = () => {
   return (
     <Container className="h-100">
       <Row className="justify-content-center loginForm">
-        <Col md="4">
-          <img src={logo} width="150" alt="Logo Dashboard Project" />
-          <h1>Login Form</h1>
+        <Col md="4" className="wrapLoginForm p-5">
+          <div className="d-flex justify-content-center m-4">
+            <div className="brand_logo_container">
+              <img src={logo} className="brand_logo" alt="Logo Dashboard Project" />
+            </div>
+          </div>
+          <h1 className="textWelcome mt-5 mb-4 text-center">Welcome to Jackie CMS!</h1>
           <Formik
             validationSchema={schema}
             onSubmit={handleOnSubmit}
@@ -54,16 +58,18 @@ const Login = () => {
           >
             {({
               handleSubmit,
+              handleBlur,
               handleChange,
               values,
               touched,
               isValid,
-              errors,
+              dirty,
+              errors
             }) => (
               <Form noValidate onSubmit={handleSubmit}>
-                <Form.Group className="mb-3">
+                <Form.Group className="mb-3 mx-4">
                   <InputGroup hasValidation>
-                    <InputGroup.Text id="unsername">
+                    <InputGroup.Text id="username">
                       <FontAwesomeIcon icon={faUserAlt} />
                     </InputGroup.Text>
                     <Form.Control
@@ -73,15 +79,16 @@ const Login = () => {
                       name="username"
                       value={values.username}
                       onChange={handleChange}
-                      isInvalid={!!errors.username}
+                      isInvalid={!!errors.username && touched.username}
                       className="shadow-none"
+                      onBlur={handleBlur}
                     />
                     <Form.Control.Feedback type="invalid">
-                      {errors.username}
+                      {!!errors.username && touched.username ? errors.username : null}
                     </Form.Control.Feedback>
                   </InputGroup>
                 </Form.Group>
-                <Form.Group className="mb-3">
+                <Form.Group className="mb-3 mx-4">
                   <InputGroup hasValidation>
                     <InputGroup.Text id="password">
                       <FontAwesomeIcon icon={faKey} />
@@ -93,35 +100,40 @@ const Login = () => {
                       name="password"
                       value={values.password}
                       onChange={handleChange}
-                      isInvalid={!!errors.password}
+                      isInvalid={!!errors.password && touched.password}
                       className="shadow-none inputPassword"
+                      onBlur={handleBlur}
                     />
-                    <InputGroup.Text id="iconShowPassword" onClick={handleShowPassword}>
+                    <InputGroup.Text id="iconShowPassword" className={!!errors.password && touched.password ? "isInvalid" : "isValid"} onClick={handleShowPassword}>
                       <FontAwesomeIcon
                         icon={showPassword ? faEye : faEyeSlash}
                       />
                     </InputGroup.Text>
-                    <Form.Control.Feedback type="invalid">
-                      {errors.password}
+                    <Form.Control.Feedback type="invalid">              
+                      {!!errors.password && touched.password ? errors.password : null}
+
                     </Form.Control.Feedback>
                   </InputGroup>
                 </Form.Group>
 
-                <Form.Group className="mb-3">
+                <Form.Group className="mb-3 mx-4">
                   <Form.Check
                     name="rememberMe"
-                    label="Remember Me!"
+                    label="Remember me!"
                     onChange={handleChange}
-                    id="validationFormik0"
+                    id="rememberMe"
+                    className="shadow-none checkboxRemember"
                   />
                 </Form.Group>
-                <Button type="submit" disabled={errors.username || errors.password ? "disabled" : null }>Submit form</Button>
+                <div className="d-flex justify-content-center">
+                  <Button className="px-5" variant="danger" type="submit" disabled={!(isValid && dirty) ? "disabled" : null }>Submit form</Button>
+                </div>
               </Form>
             )}
-          </Formik>
-        </Col>
-      </Row>
-    </Container>
+        </Formik>
+      </Col>
+    </Row>
+    </Container >
   );
 };
 
