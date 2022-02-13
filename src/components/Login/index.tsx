@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Formik } from "formik";
 import * as yup from "yup";
 import "./Login.scss";
-import logo from "./../../assets/images/logo.png";
+import * as Logo from "./../../assets/images/logo.png";
 
 import { Col, Row, Container, Button, Form, InputGroup } from "react-bootstrap";
 
@@ -17,7 +17,7 @@ import {
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleOnSubmit = (values) => {
+  const handleOnSubmit = (values: any) => {
     console.log("check submit", values);
   };
 
@@ -38,12 +38,12 @@ const Login = () => {
   };
 
   return (
-    <Container className="h-100">
+    <Container className="h-100" id="wrapLoginForm" fluid>
       <Row className="justify-content-center loginForm">
         <Col md="4" className="wrapLoginForm p-5">
           <div className="d-flex justify-content-center m-4">
             <div className="brand_logo_container">
-              <img src={logo} className="brand_logo" alt="Logo Dashboard Project" />
+              <img src={Logo} className="brand_logo" alt="Logo Dashboard Project" />
             </div>
           </div>
           <h1 className="textWelcome mt-5 mb-4 text-center">Welcome to Jackie CMS!</h1>
@@ -126,7 +126,7 @@ const Login = () => {
                   />
                 </Form.Group>
                 <div className="d-flex justify-content-center">
-                  <Button className="px-5" variant="danger" type="submit" disabled={!(isValid && dirty) ? "disabled" : null }>Submit form</Button>
+                  <Button className="px-5" variant="danger" type="submit" disabled={!(isValid && dirty) ? true : false }>Submit form</Button>
                 </div>
               </Form>
             )}
