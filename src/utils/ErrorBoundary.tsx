@@ -13,7 +13,7 @@ class ErrorBoundary extends React.Component<any, any> {
   componentDidCatch(error: any, errorInfo: any) {} // You can also log the error
 
   render() {
-    console.log("ERRORBOUNDARY render");
+    // console.log("ERRORBOUNDARY render");
     if (this.state.hasError) {
       if (this.props.errorUI) {
         return this.props.errorUI;

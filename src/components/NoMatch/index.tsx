@@ -1,5 +1,5 @@
 import './NoMatch.scss';
-import * as bg_404 from './../../assets/images/bg_404.png';
+import bg_404 from './../../assets/images/bg_404.png';
 import ErrorBoundary from './../../utils/ErrorBoundary';
 
 const NoMatch = () => {

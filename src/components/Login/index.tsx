@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Formik } from "formik";
 import * as yup from "yup";
 import "./Login.scss";
-import * as Logo from "./../../assets/images/logo.png";
+import Logo from './../../assets/images/logo.png';
 
 import { Col, Row, Container, Button, Form, InputGroup } from "react-bootstrap";
 
