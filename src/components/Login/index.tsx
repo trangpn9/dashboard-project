@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Formik } from "formik";
 import * as yup from "yup";
 import "./Login.scss";
@@ -13,6 +13,8 @@ import {
   faEye,
   faEyeSlash,
 } from "@fortawesome/free-solid-svg-icons";
+import ErrorBoundary from './../../utils/ErrorBoundary';
+import { log } from "console";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -37,13 +39,17 @@ const Login = () => {
     return setShowPassword(!showPassword);
   };
 
+  console.log("test: ", Logo);
+  
   return (
     <Container className="h-100" id="wrapLoginForm" fluid>
       <Row className="justify-content-center loginForm">
         <Col md="4" className="wrapLoginForm p-5">
           <div className="d-flex justify-content-center m-4">
             <div className="brand_logo_container">
-              <img src={Logo} className="brand_logo" alt="Logo Dashboard Project" />
+              <ErrorBoundary>
+                <img src={Logo} className="brand_logo" alt="Logo Dashboard Project" />
+              </ErrorBoundary>
             </div>
           </div>
           <h1 className="textWelcome mt-5 mb-4 text-center">Welcome to Jackie CMS!</h1>

@@ -1,12 +1,13 @@
-import React from "react";
 import './NoMatch.scss';
-import * as bg_404 from './../../assets/images/bg_404.png'
-
+import * as bg_404 from './../../assets/images/bg_404.png';
+import ErrorBoundary from './../../utils/ErrorBoundary';
 
 const NoMatch = () => {
   return (
     <div className="d-flex justify-content-center">
-      <img alt="bg_404" src={bg_404} />
+      <ErrorBoundary>
+        <img alt="bg_404" src={bg_404} />
+      </ErrorBoundary>
     </div>
   );
 
