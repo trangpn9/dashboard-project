@@ -14,7 +14,6 @@ import {
   faEyeSlash,
 } from "@fortawesome/free-solid-svg-icons";
 import ErrorBoundary from './../../utils/ErrorBoundary';
-import { log } from "console";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -39,12 +38,10 @@ const Login = () => {
     return setShowPassword(!showPassword);
   };
 
-  console.log("test: ", Logo);
-  
   return (
     <Container className="h-100" id="wrapLoginForm" fluid>
       <Row className="justify-content-center loginForm">
-        <Col md="4" className="wrapLoginForm p-5">
+        <Col xs={10} sm={6} lg={4} xxl={3} className="wrapLoginForm p-5">
           <div className="d-flex justify-content-center m-4">
             <div className="brand_logo_container">
               <ErrorBoundary>
