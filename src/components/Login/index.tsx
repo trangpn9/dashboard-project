@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Formik } from "formik";
 import * as yup from "yup";
 import "./Login.scss";
 import Logo from './../../assets/images/logo.png';
+import useAuth from './../../Hooks/useAuth';
+import {useNavigate, useLocation} from 'react-router-dom';
 
 import { Col, Row, Container, Button, Form, InputGroup } from "react-bootstrap";
 
@@ -18,8 +20,29 @@ import ErrorBoundary from './../../utils/ErrorBoundary';
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
 
+  let navigate = useNavigate();
+  let location:any = useLocation();
+  let auth = useAuth();
+
+  let from = location.state?.from?.pathname || "/dashboard";
+
+  useEffect(() => {
+    console.log('Pathname: ', location.state?.from?.pathname);
+    if(auth.user) return navigate(from, { replace: true });
+  },[])
+
   const handleOnSubmit = (values: any) => {
-    console.log("check submit", values);
+    auth.signin(values.username, () => {
+      // Send them back to the page they tried to visit when they were
+      // redirected to the login page. Use { replace: true } so we don't create
+      // another entry in the history stack for the login page.  This means that
+      // when they get to the protected page and click the back button, they
+      // won't end up back on the login page, which is also really nice for the
+      // user experience.
+      navigate(from, { replace: true });
+      console.log('Check Pathname: ', location);
+
+    });
   };
 
   const schema = yup.object().shape({
