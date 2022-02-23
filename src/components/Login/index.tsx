@@ -61,7 +61,7 @@ const Login = () => {
     return setShowPassword(!showPassword);
   };
 
-  return (
+  return auth.isAuthenticated ? null : (
     <Container className="h-100" id="wrapLoginForm" fluid>
       <Row className="justify-content-center loginForm">
         <Col xs={10} sm={6} lg={4} xxl={3} className="wrapLoginForm p-5">
