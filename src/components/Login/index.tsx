@@ -4,7 +4,7 @@ import * as yup from "yup";
 import "./Login.scss";
 import Logo from './../../assets/images/logo.png';
 import useAuth from './../../Hooks/useAuth';
-import {useNavigate, useLocation} from 'react-router-dom';
+import {useNavigate, useLocation, Navigate} from 'react-router-dom';
 
 import { Col, Row, Container, Button, Form, InputGroup } from "react-bootstrap";
 
@@ -24,12 +24,12 @@ const Login = () => {
   let location:any = useLocation();
   let auth = useAuth();
 
-  let from = location.state?.from?.pathname || "/dashboard";
+  let from = location.state?.from?.pathname ? location.state.from.pathname : "/dashboard";
 
-  useEffect(() => {
-    console.log('Pathname: ', location.state?.from?.pathname);
-    if(auth.user) return navigate(from, { replace: true });
-  },[])
+  // useEffect(() => {
+  //   console.log('Pathname: ', location.state?.from?.pathname);
+  //   if(auth.user) return navigate(from, { replace: true });
+  // },[])
 
   const handleOnSubmit = (values: any) => {
     auth.signin(values.username, () => {
@@ -61,7 +61,7 @@ const Login = () => {
     return setShowPassword(!showPassword);
   };
 
-  return auth.isAuthenticated ? null : (
+  return auth.isAuthenticated ? <Navigate to={from} /> : (
     <Container className="h-100" id="wrapLoginForm" fluid>
       <Row className="justify-content-center loginForm">
         <Col xs={10} sm={6} lg={4} xxl={3} className="wrapLoginForm p-5">
