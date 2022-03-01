@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 import { AuthProvider } from './Contexts/AuthContext';
 import RequireAuthHOC from './HOCs/RequireAuthHOC';
@@ -8,7 +8,8 @@ import NoMatch from './components/NoMatch';
 import Settings from './components/Settings';
 import Layout from './components/Layout';
 
-const App = () => (
+const App = () => {
+  return (
 
   <AuthProvider>
     <Router>
@@ -22,6 +23,6 @@ const App = () => (
       </Routes>
     </Router>
   </AuthProvider>
-);
+);}
 
 export default App;

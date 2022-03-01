@@ -4,10 +4,8 @@ import * as yup from "yup";
 import "./Login.scss";
 import Logo from './../../assets/images/logo.png';
 import useAuth from './../../Hooks/useAuth';
-import {useNavigate, useLocation, Navigate} from 'react-router-dom';
-
+import {useNavigate, Navigate, useLocation} from 'react-router-dom';
 import { Col, Row, Container, Button, Form, InputGroup } from "react-bootstrap";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUserAlt,
@@ -24,12 +22,12 @@ const Login = () => {
   let location:any = useLocation();
   let auth = useAuth();
 
-  let from = location.state?.from?.pathname ? location.state.from.pathname : "/dashboard";
+  let from = location.state?.from?.pathname || "/dashboard";
 
-  // useEffect(() => {
-  //   console.log('Pathname: ', location.state?.from?.pathname);
-  //   if(auth.user) return navigate(from, { replace: true });
-  // },[])
+  useEffect(() => {
+    console.log('Pathname: ', location.state?.from?.pathname);
+    if(auth.user) return navigate(from, { replace: true });
+  },[])
 
   const handleOnSubmit = (values: any) => {
     auth.signin(values.username, () => {
@@ -41,7 +39,6 @@ const Login = () => {
       // user experience.
       navigate(from, { replace: true });
       console.log('Check Pathname: ', location);
-
     });
   };
 
