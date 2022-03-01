@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './index.css';
+import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import SSRProvider from 'react-bootstrap/SSRProvider';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <SSRProvider>
+      <App />
+    </SSRProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
