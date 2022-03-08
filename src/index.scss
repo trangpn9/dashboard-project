@@ -16,3 +16,8 @@ code {
 .form-check label {
   cursor: pointer;
 }
+
+button.btn, button.btn:not(:disabled):not(.disabled):active, button.btn:hover, button.btn:focus, button.btn:active, button.btn:not(:disabled):not(.disabled):focus {
+  outline: 0 none;
+  box-shadow: none;
+}

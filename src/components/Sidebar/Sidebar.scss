@@ -1,5 +1,6 @@
 #sidenav-main {
   box-shadow: 0 0 2rem 0 rgba(136,152,170,.15)!important;
+  padding: 1rem;
 
   .navbar-nav {
     flex-direction:column;
@@ -17,11 +18,24 @@
 
   .navbar-light .navbar-toggler {
     color: rgba(0,0,0,.5);
-    border-color: transparent;
   }
 
-  .navbar-toggler {
-    border: 1px solid transparent;
+  .btn {
+    border: none;
+  }
+
+  img.navbar-brand-img {
+    max-height: 2rem;
+    max-width: 100%;
+  }
+
+  .avatar img {
+    width: 2.2rem;
+    border-radius: 50%;
+  }
+
+  .nav-link {
+    padding: 0.276rem 1rem;
   }
 
 }
@@ -118,6 +132,64 @@
     -webkit-animation: show-navbar-collapse .2s ease forwards;
     animation: show-navbar-collapse .2s ease forwards;
   }
+}
 
+@-webkit-keyframes show-navbar-collapse {
+	0% {
+		opacity: 0;
+		-webkit-transform: scale(.95);
+		transform: scale(.95);
+		-webkit-transform-origin: 100% 0;
+		transform-origin: 100% 0
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: scale(1);
+		transform: scale(1)
+	}
+}
 
+@keyframes show-navbar-collapse {
+	0% {
+		opacity: 0;
+		-webkit-transform: scale(.95);
+		transform: scale(.95);
+		-webkit-transform-origin: 100% 0;
+		transform-origin: 100% 0
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: scale(1);
+		transform: scale(1)
+	}
+}
+
+@-webkit-keyframes hide-navbar-collapse {
+	0% {
+		opacity: 1;
+		-webkit-transform: scale(1);
+		transform: scale(1);
+		-webkit-transform-origin: 100% 0;
+		transform-origin: 100% 0
+	}
+	to {
+		opacity: 0;
+		-webkit-transform: scale(.95);
+		transform: scale(.95)
+	}
+}
+
+@keyframes hide-navbar-collapse {
+	0% {
+		opacity: 1;
+		-webkit-transform: scale(1);
+		transform: scale(1);
+		-webkit-transform-origin: 100% 0;
+		transform-origin: 100% 0
+	}
+	to {
+		opacity: 0;
+		-webkit-transform: scale(.95);
+		transform: scale(.95)
+	}
 }
