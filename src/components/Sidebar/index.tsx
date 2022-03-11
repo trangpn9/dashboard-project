@@ -3,6 +3,9 @@ import "./Sidebar.scss";
 import LogoDashboard from "./../../assets/images/logo_dashboard.png";
 import Avatar from "./../../assets/images/avatar.png"
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTvAlt, faEarthAsia, faLocation, faUserAlt, faList, faRocket, faPaintBrush, faGifts } from '@fortawesome/free-solid-svg-icons';
+import CustomLink from '../../HOCs/CustomLink';
 
 function Sidebar() {
   const [toggleNav, setToggleNav] = useState(false);
@@ -81,66 +84,56 @@ function Sidebar() {
           </div>
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a aria-current="page" className="nav-link active" href="#/admin/index">
-                <i className="ni ni-tv-2 text-primary"></i>Dashboard
-              </a>
+              <CustomLink to="/dashboard">
+                <i className="ni text-primary"><FontAwesomeIcon icon={faTvAlt} /></i>Dashboard
+              </CustomLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#/admin/icons">
-                <i className="ni ni-planet text-blue"></i>Icons
-              </a>
+              <CustomLink to="/settings">
+                <i className="ni text-blue"><FontAwesomeIcon icon={faEarthAsia} /></i>Settings
+              </CustomLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#/admin/maps">
-                <i className="ni ni-pin-3 text-orange"></i>Maps
-              </a>
+              <CustomLink to="/">
+                <i className="ni text-orange"><FontAwesomeIcon icon={faLocation} /></i>Maps
+              </CustomLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#/admin/user-profile">
-                <i className="ni ni-single-02 text-yellow"></i>User Profile
-              </a>
+              <CustomLink to="/">
+                <i className="ni text-yellow"><FontAwesomeIcon icon={faUserAlt} /></i>User Profile
+              </CustomLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#/admin/tables">
-                <i className="ni ni-bullet-list-67 text-red"></i>Tables
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#/auth/login">
-                <i className="ni ni-key-25 text-info"></i>Login
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#/auth/register">
-                <i className="ni ni-circle-08 text-pink"></i>Register
-              </a>
-            </li>
+              <CustomLink to="/tables">
+                <i className="ni text-red"><FontAwesomeIcon icon={faList} /></i>Tables
+              </CustomLink>
+            </li>            
           </ul>
           <hr className="my-3" />
           <h6 className="navbar-heading text-muted">Documentation</h6>
           <ul className="mb-md-3 navbar-nav">
             <li className="nav-item">
               <a
-                href="https://demos.creative-tim.com/argon-dashboard-react/#/documentation/overview?ref=adr-admin-sidebar"
+                href="#"
                 className="nav-link"
               >
-                <i className="ni ni-spaceship"></i>Getting started
+                <i className="ni"><FontAwesomeIcon icon={faRocket} /></i>Getting started
               </a>
             </li>
             <li className="nav-item">
               <a
-                href="https://demos.creative-tim.com/argon-dashboard-react/#/documentation/colors?ref=adr-admin-sidebar"
+                href="#"
                 className="nav-link"
               >
-                <i className="ni ni-palette"></i>Foundation
+                <i className="ni"><FontAwesomeIcon icon={faPaintBrush} /></i>Foundation
               </a>
             </li>
             <li className="nav-item">
               <a
-                href="https://demos.creative-tim.com/argon-dashboard-react/#/documentation/alerts?ref=adr-admin-sidebar"
+                href="#"
                 className="nav-link"
               >
-                <i className="ni ni-ui-04"></i>Components
+                <i className="ni"><FontAwesomeIcon icon={faGifts} /></i>Components
               </a>
             </li>
           </ul>

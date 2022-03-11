@@ -8,17 +8,7 @@ function Header() {
 
   return (
     <div>
-      <ul>
-        <li>
-          <Link to={linkLogin} >Login</Link>
-        </li>
-        <li>
-          <Link to="/dashboard" >Dashboard</Link>
-        </li>
-        <li>
-          <Link to="/settings" >Settings</Link>
-        </li>
-      </ul>
+      
     </div>
   )
 }
