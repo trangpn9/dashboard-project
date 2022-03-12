@@ -13,8 +13,10 @@ import {
   faRocket,
   faPaintBrush,
   faGifts,
-  faUmbrellaBeach
+  faUmbrellaBeach,
+  faUser, faRightToBracket, faGear
 } from "@fortawesome/free-solid-svg-icons";
+import {Dropdown} from 'react-bootstrap';
 import CustomLink from "../../HOCs/CustomLink";
 
 function Sidebar() {
@@ -54,121 +56,32 @@ function Sidebar() {
           />
         </Link>
 
-        <ul className="align-items-center d-md-none nav">
-          <li className="dropdown nav-item">
-            <a
-              aria-haspopup="true"
-              href="#"
-              className="nav-link-icon nav-link"
-              aria-expanded="false"
-            >
-              <i className="ni ni-bell-55"></i>
-            </a>
-            <div
-              tabIndex={-1}
-              role="menu"
-              aria-labelledby="navbar-default_dropdown_1"
-              aria-hidden="true"
-              className="dropdown-menu-arrow dropdown-menu dropdown-menu-right"
-            >
-              <button
-                type="button"
-                tabIndex={0}
-                role="menuitem"
-                className="dropdown-item"
-              >
-                Action
-              </button>
-              <button
-                type="button"
-                tabIndex={0}
-                role="menuitem"
-                className="dropdown-item"
-              >
-                Another action
-              </button>
-              <div tabIndex={-1} className="dropdown-divider"></div>
-              <button
-                type="button"
-                tabIndex={0}
-                role="menuitem"
-                className="dropdown-item"
-              >
-                Something else here
-              </button>
-            </div>
-          </li>
-          <li className="dropdown nav-item">
-            <a
-              aria-haspopup="true"
-              href="#"
-              className="nav-link"
-              aria-expanded="false"
-            >
-              <div className="align-items-center media">
-                <span className="avatar avatar-sm rounded-circle">
-                  <img alt="Jackie Trang" src={Avatar} />
+        <Dropdown className="align-items-center d-md-none nav dropDownRB" align="end">
+          <Dropdown.Toggle className="dropdown-autoclose-outside">
+            <div className="align-items-center media">
+              <span className="avatar avatar-sm rounded-circle">
+                <img alt="Avatar" src={Avatar} />
+              </span>
+              <div className="ml-2 d-none d-lg-block media">
+                <span className="mb-0 text-sm font-weight-bold">
+                  Jackie Trang
                 </span>
               </div>
-            </a>
-            <div
-              tabIndex={-1}
-              role="menu"
-              aria-hidden="true"
-              className="dropdown-menu-arrow dropdown-menu dropdown-menu-right"
-            >
-              <div tabIndex={-1} className="noti-title dropdown-header">
-                <h6 className="text-overflow m-0">Welcome!</h6>
-              </div>
-              <a
-                tabIndex={0}
-                role="menuitem"
-                className="dropdown-item"
-                href="#/admin/user-profile"
-              >
-                <i className="ni ni-single-02"></i>
-                <span>My profile</span>
-              </a>
-              <a
-                tabIndex={0}
-                role="menuitem"
-                className="dropdown-item"
-                href="#/admin/user-profile"
-              >
-                <i className="ni ni-settings-gear-65"></i>
-                <span>Settings</span>
-              </a>
-              <a
-                tabIndex={0}
-                role="menuitem"
-                className="dropdown-item"
-                href="#/admin/user-profile"
-              >
-                <i className="ni ni-calendar-grid-58"></i>
-                <span>Activity</span>
-              </a>
-              <a
-                tabIndex={0}
-                role="menuitem"
-                className="dropdown-item"
-                href="#/admin/user-profile"
-              >
-                <i className="ni ni-support-16"></i>
-                <span>Support</span>
-              </a>
-              <div tabIndex={-1} className="dropdown-divider"></div>
-              <a
-                href="#pablo"
-                tabIndex={0}
-                role="menuitem"
-                className="dropdown-item"
-              >
-                <i className="ni ni-user-run"></i>
-                <span>Logout</span>
-              </a>
             </div>
-          </li>
-        </ul>
+          </Dropdown.Toggle>
+
+          <Dropdown.Menu>
+            <Dropdown.Header>Welcome!</Dropdown.Header>
+            <Dropdown.Item eventKey="1">
+              <FontAwesomeIcon icon={faUser} className="iconAwesome" />User profile
+            </Dropdown.Item>
+            <Dropdown.Item eventKey="2">
+              <FontAwesomeIcon icon={faGear} className="iconAwesome" />Settings
+            </Dropdown.Item>
+            <Dropdown.Divider />
+            <Dropdown.Item eventKey="3"><FontAwesomeIcon icon={faRightToBracket} className="iconAwesome" />Logout</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
 
         <div
           className={

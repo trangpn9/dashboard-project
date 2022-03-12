@@ -153,3 +153,39 @@ text-muted {
 .font-weight-bold {
   font-weight: 600!important;
 }
+
+.dropDownRB {
+  .dropdown-toggle::after {
+    content: none;
+  }
+  
+  .btn.dropdown-autoclose-outside {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+  }
+
+  .dropdown-item {
+    padding: 0.4rem 1rem;
+  }
+
+  .iconAwesome {
+    margin-right: 0.8rem;
+  }
+
+  .dropdown-menu::before {
+    background: #fff;
+    box-shadow: none;
+    content: "";
+    display: block;
+    height: 12px;
+    width: 12px;
+    right: 20px;
+    position: absolute;
+    bottom: 100%;
+    -webkit-transform: rotate(-45deg) translateY(12px);
+    transform: rotate(-45deg) translateY(12px);
+    z-index: -5;
+    border-radius: 2px;
+  }
+}
