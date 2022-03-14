@@ -110,7 +110,7 @@ function Sidebar() {
             </div>
           </div>
           <ul className="navbar-nav">
-            <li className="nav-item">
+            <li className="nav-item" onClick={handleCloseNav}>
               <CustomLink to="/dashboard">
                 <i className="ni text-primary">
                   <FontAwesomeIcon icon={faTvAlt} />
@@ -118,7 +118,7 @@ function Sidebar() {
                 Dashboard
               </CustomLink>
             </li>
-            <li className="nav-item">
+            <li className="nav-item" onClick={handleCloseNav}>
               <CustomLink to="/settings">
                 <i className="ni text-blue">
                   <FontAwesomeIcon icon={faEarthAsia} />
@@ -126,7 +126,7 @@ function Sidebar() {
                 Settings
               </CustomLink>
             </li>
-            <li className="nav-item">
+            <li className="nav-item" onClick={handleCloseNav}>
               <CustomLink to="/">
                 <i className="ni text-orange">
                   <FontAwesomeIcon icon={faLocation} />
@@ -134,7 +134,7 @@ function Sidebar() {
                 Maps
               </CustomLink>
             </li>
-            <li className="nav-item">
+            <li className="nav-item" onClick={handleCloseNav}>
               <CustomLink to="/">
                 <i className="ni text-yellow">
                   <FontAwesomeIcon icon={faUserAlt} />
@@ -142,7 +142,7 @@ function Sidebar() {
                 User Profile
               </CustomLink>
             </li>
-            <li className="nav-item">
+            <li className="nav-item" onClick={handleCloseNav}>
               <CustomLink to="/tables">
                 <i className="ni text-red">
                   <FontAwesomeIcon icon={faList} />
@@ -154,7 +154,7 @@ function Sidebar() {
           <hr className="my-3" />
           <h6 className="navbar-heading text-muted">Documentation</h6>
           <ul className="mb-md-3 navbar-nav">
-            <li className="nav-item">
+            <li className="nav-item" onClick={handleCloseNav}>
               <a href="#" className="nav-link">
                 <i className="ni">
                   <FontAwesomeIcon icon={faRocket} />
@@ -162,7 +162,7 @@ function Sidebar() {
                 Getting started
               </a>
             </li>
-            <li className="nav-item">
+            <li className="nav-item" onClick={handleCloseNav}>
               <a href="#" className="nav-link">
                 <i className="ni">
                   <FontAwesomeIcon icon={faPaintBrush} />
@@ -170,7 +170,7 @@ function Sidebar() {
                 Foundation
               </a>
             </li>
-            <li className="nav-item">
+            <li className="nav-item" onClick={handleCloseNav}>
               <a href="#" className="nav-link">
                 <i className="ni">
                   <FontAwesomeIcon icon={faGifts} />
