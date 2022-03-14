@@ -1,6 +1,5 @@
 import { Outlet } from "react-router-dom";
 import Footer from "../Footer";
-import Header from "../Header";
 import Sidebar from "../Sidebar";
 import NavbarMain from "../NavbarMain";
 
@@ -11,8 +10,7 @@ function Layout() {
     <div className="h-100" id="containerLayout">
       <Sidebar />
       <div className="main-content">
-        <NavbarMain/>
-        <Header />
+        <NavbarMain/>        
         <Outlet />
         <Footer />
       </div>
