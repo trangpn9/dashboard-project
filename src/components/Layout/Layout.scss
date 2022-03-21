@@ -1,0 +1,14 @@
+#containerLayout {
+  .main-content {
+    background-color: #F6F7FC;
+    position: relative;
+  }
+  
+}
+
+@media (min-width: 768px) {
+  .navbar-vertical.navbar-expand-md.fixed-left+.main-content {
+    margin-left: 250px;
+    min-height: 100%;
+  }
+}

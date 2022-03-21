@@ -1,9 +1,13 @@
 import React from "react";
-import './Dashboard.scss'
+import './Dashboard.scss';
+import HeaderDashboard from "./HeaderDashboard";
 
 const Dashboard = () => {
   return (
-    <div>Dashboard Component</div>
+    <>
+      <HeaderDashboard />
+      <div>Dashboard Component</div>
+    </>
   );
 };
 

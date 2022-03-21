@@ -1,20 +1,21 @@
-import { Container } from 'react-bootstrap';
-import { Outlet } from 'react-router-dom';
-import Footer from '../Footer';
-import Header from '../Header';
-import Navigations from '../Navigations';
+import { Outlet } from "react-router-dom";
+import Footer from "../Footer";
+import Sidebar from "../Sidebar";
+import NavbarMain from "../NavbarMain";
+
+import "./Layout.scss";
 
 function Layout() {
   return (
-    <>
-      <Navigations />
-      <Container fluid className="h-100">
-        <Header />
+    <div className="h-100" id="containerLayout">
+      <Sidebar />
+      <div className="main-content">
+        <NavbarMain/>        
         <Outlet />
         <Footer />
-      </Container>
-    </>
-  )
+      </div>
+    </div>
+  );
 }
 
-export default Layout
+export default Layout;

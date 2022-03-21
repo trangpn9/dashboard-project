@@ -1,7 +1,12 @@
+import React from "react";
+import HeaderSettings from "./HeaderSettings";
 
 function Settings() {
   return (
-    <div>Settings</div>
+    <>
+      <HeaderSettings/>
+      <div>Settings</div>
+    </>
   )
 }
 

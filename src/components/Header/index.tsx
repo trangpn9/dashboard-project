@@ -1,26 +1,17 @@
-import { Link, useLocation } from 'react-router-dom';
-import useAuth from 'src/Hooks/useAuth';
+import type React from 'react';
+import './Header.scss';
 
-function Header() {
-  const auth = useAuth();
-  const location = useLocation();
-  const linkLogin = auth.isAuthenticated ? location.pathname : "/";
-
+const Header = ({ children, classBgHeader }: {children: React.ReactNode, classBgHeader: string | null}) => {
   return (
-    <div>
-      <ul>
-        <li>
-          <Link to={linkLogin} >Login</Link>
-        </li>
-        <li>
-          <Link to="/dashboard" >Dashboard</Link>
-        </li>
-        <li>
-          <Link to="/settings" >Settings</Link>
-        </li>
-      </ul>
+    <div className={`header pb-8 pt-5 pt-md-8 ${classBgHeader}`}>
+      <div className="container-fluid">
+        <div className="header-body">
+          {children}
+        </div>
+      </div>
     </div>
-  )
+  );
+
 }
 
-export default Header
+export default Header;
