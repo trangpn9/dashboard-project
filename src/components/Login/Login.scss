@@ -8,9 +8,51 @@ html {
   height: 100%;
 }
 
-#wrapLoginForm {
-  background-color: #60a3bc;
-  
+#idWrapLoginForm {
+  background-color: #172B4D;
+
+  .header {
+    position: relative;
+  }
+
+  .space-free-login {
+    min-height: 20rem;
+  }
+
+  .separator-bottom {
+    top: auto;
+    bottom: 0;
+  }
+
+  .separator,
+  .separator svg {
+    position: absolute;
+    pointer-events: none;
+    bottom: 0;
+  }
+
+  .separator {
+    top: auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    overflow: hidden;
+  }
+
+  .separator-skew {
+    height: 100px;
+  }
+
+  .fill-default {
+    fill: #172b4d;
+  }
+
+  .containerFormLogin {
+    margin-top: -8.5rem;
+  }
+
   .loginForm {
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -20,25 +62,25 @@ html {
     -webkit-box-align: center;
     align-items: center;
     height: 100%;
-  
+
     .wrapLoginForm {
-      background-color: #f39c12;
+      background-color: #fff;
       box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
       -webkit-box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
       -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
       border-radius: 5px;
       position: relative;
-    
+
       .brand_logo_container {
         position: absolute;
         height: 170px;
         width: 170px;
         top: -75px;
         border-radius: 50%;
-        background: #60a3bc;
+        background-color: transparent;
         padding: 10px;
         text-align: center;
-  
+
         .brand_logo {
           height: 150px;
           width: 150px;
@@ -46,54 +88,52 @@ html {
           border: 2px solid white;
         }
       }
-  
+
       .textWelcome {
-        color: #fff;
+        color: dodgerblue;
         font-size: 1.5rem;
       }
-  
-      span.input-group-text#password, span.input-group-text#username {
-        background-color: #CA3737;
-        border-color: #CA3737;
-        color: #fff;
+
+      span.input-group-text#password,
+      span.input-group-text#username {
+        color: gray;
       }
-    
+
       #iconShowPassword {
         background-color: #fff;
         border-left: none;
         cursor: pointer;
         color: #808080;
       }
-    
+
       .inputPassword {
         border-right: none;
         border-radius: 0;
       }
-    
+
       .isInvalid {
         border-right: 1px solid red;
         border-top: 1px solid red;
         border-bottom: 1px solid red;
       }
-  
+
       // .isValid {
       //   border-right: 1px solid #0d6efd;
       //   border-top: 1px solid #0d6efd;
       //   border-bottom: 1px solid #0d6efd;
       // }
-  
+
       .checkboxRemember label {
-        color: #fff;
+        color: #8898aa;
       }
-  
-      .form-check-input:checked {
-        background-color: #CA3737;
-        border-color: #be3232;
-        // background-color: #0d6efd;
-        // border-color: #0d6efd;
+
+      .form-check-input:checked {        
+        background-color: #0d6efd;
+        border-color: #0d6efd;
         box-shadow: none;
         outline: 0 none;
       }
+
       .form-check-input:focus {
         box-shadow: none;
         outline: 0 none;
