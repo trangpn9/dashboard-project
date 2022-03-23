@@ -29,8 +29,10 @@ Your app is ready to be deployed!
 ## Auth
 
 Developer: Jackie Trang - (Trang Phan)
+
 Skype: trangpn90
 
 ## Copyright
 Ideas theme: From https://www.creative-tim.com
+
 Project structure: Design by Jackie Trang
