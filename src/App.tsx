@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { AuthProvider } from './Contexts/AuthContext';
 import RequireAuthHOC from './HOCs/RequireAuthHOC';
 import Login from './components/Login';
-import Dashboard from './components/Dashboard';
-import NoMatch from './components/NoMatch';
-import Settings from './components/Settings';
+import Dashboard from './Pages/Dashboard';
+import NoMatch from './Pages/NoMatch';
+import Settings from './Pages/Settings';
 import Layout from './components/Layout';
 
 const App = () => {

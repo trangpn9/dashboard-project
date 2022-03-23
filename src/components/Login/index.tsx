@@ -78,7 +78,7 @@ const Login = () => {
                 </ErrorBoundary>
               </div>
             </div>
-            <h1 className="textWelcome mt-5 mb-4 text-center">Welcome to Jackie CMS!</h1>
+            <h1 className="textWelcome mt-5 mb-4 text-center">Welcome to Dashboard Project!</h1>
             <Formik
               validationSchema={schema}
               onSubmit={handleOnSubmit}

@@ -109,6 +109,12 @@ html {
       .inputPassword {
         border-right: none;
         border-radius: 0;
+
+        &:focus ~ #iconShowPassword {
+          border-right: 1px solid #86b7fe;
+          border-top: 1px solid #86b7fe;
+          border-bottom: 1px solid #86b7fe;
+        }
       }
 
       .isInvalid {
