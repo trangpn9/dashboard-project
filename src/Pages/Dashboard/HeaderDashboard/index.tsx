@@ -9,7 +9,7 @@ import {
   faArrowDown
 } from "@fortawesome/free-solid-svg-icons";
 
- import  Header from '../../Header';
+ import  Header from './../../../components/Header';
 
 const HeaderDashboard = () => {
   return (

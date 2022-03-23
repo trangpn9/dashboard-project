@@ -131,7 +131,7 @@ function Sidebar() {
                 <i className="ni text-orange">
                   <FontAwesomeIcon icon={faLocation} />
                 </i>
-                Maps
+                Google APIs
               </CustomLink>
             </li>
             <li className="nav-item" onClick={handleCloseNav}>
@@ -139,7 +139,7 @@ function Sidebar() {
                 <i className="ni text-yellow">
                   <FontAwesomeIcon icon={faUserAlt} />
                 </i>
-                User Profile
+                Upload File
               </CustomLink>
             </li>
             <li className="nav-item" onClick={handleCloseNav}>
@@ -152,14 +152,14 @@ function Sidebar() {
             </li>
           </ul>
           <hr className="my-3" />
-          <h6 className="navbar-heading text-muted">Documentation</h6>
+          <h6 className="navbar-heading text-muted">My Blog</h6>
           <ul className="mb-md-3 navbar-nav">
             <li className="nav-item" onClick={handleCloseNav}>
               <a href="#" className="nav-link">
                 <i className="ni">
                   <FontAwesomeIcon icon={faRocket} />
                 </i>
-                Getting started
+                Typescript
               </a>
             </li>
             <li className="nav-item" onClick={handleCloseNav}>
@@ -167,7 +167,7 @@ function Sidebar() {
                 <i className="ni">
                   <FontAwesomeIcon icon={faPaintBrush} />
                 </i>
-                Foundation
+                ReactJS
               </a>
             </li>
             <li className="nav-item" onClick={handleCloseNav}>
@@ -175,14 +175,14 @@ function Sidebar() {
                 <i className="ni">
                   <FontAwesomeIcon icon={faGifts} />
                 </i>
-                Components
+                NextJS
               </a>
             </li>
           </ul>
           <ul className="mb-md-3 navbar-nav">
             <li className="active-pro active nav-item">
               <a
-                href="#"
+                href="https://trang-it.com"
                 className="nav-link text-dark"
               >
                 <i className="ni text-dark">
